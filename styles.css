@@ -1,31 +1,32 @@
-html{
+html {
     font-family: 'Raleway', sans-serif;
     background: linear-gradient(45deg, #6cfd9f, #6887ff);
     height: 100%;
     color: #333;
-}
-
-body{
+ }
+ body {
     display: flex;
     height: 100%;
     margin: 0;
-}
-
-.container{
+ }
+ main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+ }
+ .container {
     width: 24rem;
     margin: auto;
     background-color: white;
     border-radius: 0.5rem;
     padding: 1rem;
-    box-shadow: 0 0 2rem rgba(0,0,0, 0.25);
-}
-
-h1{
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25);
+ }
+ h1 {
     text-align: center;
     margin-top: 0;
-}
-
-.todo-input {
+ }
+ .todo-input {
     width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
@@ -33,22 +34,23 @@ h1{
     border-radius: 0.25rem;
     border-style: none;
     border: solid 1px lightgray;
-    box-sizing:  border-box;
-}
-
-.tasks {
+    box-sizing: border-box;
+ }
+ .tasks {
     padding-left: 1.5rem;
-}
-
-.task {
+ }
+ .task {
     margin-bottom: 0.5rem;
-}
-
-.task:hover {
+ }
+ .task:hover {
     cursor: pointer;
-}
-
-.completed {
-    text-decoration : line-through;
+ }
+ .completed {
+    text-decoration: line-through;
     color: #555;
-}
+ }
+ @media only screen and (max-width: 50rem) {
+    .container {
+        width: calc(100% - 4rem);
+    }
+ }

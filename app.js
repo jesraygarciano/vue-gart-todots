@@ -8,11 +8,12 @@ var state = {
         {
             id: 1,
             task: "Watch 10 minutes meaningful videos",
-            completed: false
+            completed: true
         },
         {
             id: 2,
-            task: "Read atleast one article"
+            task: "Read atleast one article",
+            completed: false
         }
     ]
 };
@@ -86,7 +87,6 @@ var app = new Vue({
         task: "",
         newId: 3
     }),
-
     methods: {
         addTodo: function() {
             this.$store.dispatch("addTodo", this);
