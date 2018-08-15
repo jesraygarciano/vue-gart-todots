@@ -26,7 +26,7 @@ var mutations = {
     ADD_TODO: (state, payload) => {
 
         var newTask = {
-            id = payload.newId,
+            id : payload.newId,
             task : payload.task,
             completed: false
         }
