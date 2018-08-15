@@ -18,6 +18,29 @@
         <div id="app"></div>
     </div>
 
+    <template id="todo-list">
+        <ul class="tasks">
+            <li v-for = "todo is todos"
+                :class = "{completed: todo.completed}"
+                class="task"
+                @click = "toggleTodo(todo.id)"
+                @dblclick = "deleteTodo(todo.id)">
+
+                {{ todo.task }}
+
+            </li>
+        </ul>
+    </template>
+
+    <template id="app-template">
+        <div>
+            <form @submit.prevent = "addTodo">
+                <input type="text" class="todo-input" placeholder="Whats your new task" v-model="task" />
+            </form>
+
+            <todo-list />
+        </div>
+    </template>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://unpkg.com/vuex@3.0.1/dist/vuex.min.js"></script>
     <script src="app.js"></script>
