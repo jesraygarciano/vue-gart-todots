@@ -63,7 +63,7 @@ var store = new Vuex.Store({
     actions: actions
 });
 
-Vue.component("todo-list"), {
+Vue.component("todo-list", {
     computed: {
         todos(){
             return this.$store.getters.getTodos;
@@ -71,6 +71,30 @@ Vue.component("todo-list"), {
     },
 
     methods: {
-        
-    }
-}
+        toggleTodo: function(id){
+            this.$store.dispatch("toggleTodo", id);
+        },
+        deleteTodo: function(id){
+            this.$store.dispatch("deleteTodo", id);
+        }
+    },
+    template: "#todo-list"
+});
+
+var app = new Vue({
+    data: () => ({
+        task: "",
+        newId: 3
+    }),
+
+    methods: {
+        addTodo: function() {
+            this.$store.dispatch("addTodo", this);
+            this.newId ++;
+            this.task = "";
+        }
+    },
+    store: store,
+    el: "#app",
+    template: "#app-template"
+});
